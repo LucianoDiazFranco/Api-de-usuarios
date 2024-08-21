@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-generator": "^4.16.1",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "name": "epe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
