@@ -38,7 +38,7 @@ module.exports = function (dbTnyectada) {
             authData.usuario = data.usuario 
         }
         if(data.pasword){
-            authData.pasword =await bcrypt.hash(data.pasword.toString(), 7);
+            authData.pasword =await bcrypt.hash(data.pasword.toString(), 5);
         }
 
         return db.agregar(TABLA, authData);
