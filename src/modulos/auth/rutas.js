@@ -9,7 +9,7 @@ router.get('/login', login);
 
 async function login(req,res,next){
     try{
-        const token = await controlador.login(req.params.usuario2, req.params.pasword); 
+        const token = await controlador.login(req.body.usuario2, req.body.pasword); 
         respuesta.success(req, res, token,200);
     }catch(err){
         next(err);;

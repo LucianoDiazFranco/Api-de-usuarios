@@ -10,11 +10,16 @@ module.exports = function (dbTnyectada) {
     }
 
     async function login(usuario, pasword){
-        const data = await db.query(TABLE, {usuario2 : usuario2});
-    
+        const data = await db.query(TABLA, {usuario : usuario});
+
+        if (!data || !data.pasword) {
+            // Verifica si 'data' es undefined o si no tiene la propiedad 'pasword'
+            throw new Error('Usuario no encontrado o sin contraseña');
+        }
+
         return bcrypt.compare(pasword, data.pasword)
             .then(resultado =>{
-                if(resultado === tre){
+                if(resultado === true){
                     //generar un Token
                     return auth.asignarToken({ ...data})
                 }else{
