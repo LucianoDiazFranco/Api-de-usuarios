@@ -13,13 +13,8 @@ function verificarToken(token){
 }
 
 const chequearToken = {
-    confirmarToken:  function(req, id){
+    confirmarToken:  function(req){
         const decoficado = decodificarCabecera(req);
-
-        if (decoficado.id !== id){
-            throw error("No tiene permisos para hacer esto", 401)
-        }
-
     }
 }
 
@@ -31,7 +26,7 @@ function obtenerToken(autorizacion){
         throw error ('Formato Invalido', 401);
     }
 
-    let token = autorizacion.replace('Bearer ', '')
+    let token = autorizacion.replace('Bearer ','')
     return token;
 }
 
